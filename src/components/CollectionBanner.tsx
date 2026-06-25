@@ -16,9 +16,9 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-      setOffset(progress * 40 - 20);
-      setScale(1.05 + progress * 0.05);
+      const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+      setOffset(progress * 60 - 30);
+      setScale(1 + progress * 0.1);
     };
 
     handleScroll();
@@ -31,7 +31,7 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
       <img
         src={image}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        className="absolute inset-0 w-full h-full object-cover will-change-transform transition-transform duration-100"
         style={{
           transform: `translateY(${offset}px) scale(${scale})`,
         }}

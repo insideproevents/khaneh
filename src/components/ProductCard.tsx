@@ -25,8 +25,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       if (!imgRef.current) return;
       const rect = imgRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-      setOffset(progress * 20 - 10);
+      const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+      setOffset(progress * 30 - 15);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -43,8 +43,11 @@ export default function ProductCard({ product }: ProductCardProps) {
             ref={imgRef}
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            style={{ transform: `translateY(${offset}px)` }}
+            className="w-full h-full object-cover group-hover:scale-[1.03]"
+            style={{ 
+              transform: `translateY(${offset}px)`,
+              transition: 'transform 0.1s ease-out',
+            }}
             loading="lazy"
           />
         </Link>
