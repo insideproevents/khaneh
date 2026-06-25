@@ -47,8 +47,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={16} className="text-taupe shrink-0" />
-                <a href="https://wa.me/56982933921" className="text-[13px] text-taupe hover:text-arena transition-colors">
-                  +56 9 8293 3921
+                <a href="https://wa.me/56981892341" className="text-[13px] text-taupe hover:text-arena transition-colors">
+                  +56 9 8189 2341
                 </a>
               </div>
               <p className="text-[11px] text-gris-medio ml-7">(Solo whatsapp)</p>

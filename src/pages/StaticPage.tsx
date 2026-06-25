@@ -65,7 +65,7 @@ export function Devoluciones() {
 
         <h3 className="font-serif text-[22px] text-azul-profundo mt-8">Proceso de devolucion</h3>
         <ol className="list-decimal pl-6 space-y-2">
-          <li>Contactanos por email a contacto@aguilerakhaneh.cl o WhatsApp al +56 9 8293 3921.</li>
+          <li>Contactanos por email a contacto@aguilerakhaneh.cl o WhatsApp al +56 9 8189 2341.</li>
           <li>Te enviaremos una etiqueta de envio (Santiago) o te indicaremos como proceder.</li>
           <li>Una vez recibida y verificada la alfombra, procesaremos tu reembolso en 5 a 10 dias habiles.</li>
         </ol>

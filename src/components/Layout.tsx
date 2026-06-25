@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* WhatsApp Float */}
       <a
-        href="https://wa.me/56982933921"
+        href="https://wa.me/56981892341"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 left-5 md:left-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform z-50"
