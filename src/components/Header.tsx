@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full h-[70px] bg-marfil border-b border-gris-claro sticky top-0 z-50">
+      <header className="w-full h-[140px] md:h-[170px] bg-marfil border-b border-gris-claro sticky top-0 z-50">
         <div className="max-w-content mx-auto h-full flex items-center justify-between px-4 md:px-8">
           {/* Left - Welcome */}
           <div className="hidden md:block">
@@ -107,7 +107,7 @@ export default function Header() {
 
       {/* Mobile Navigation Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[70px] bg-marfil z-40 md:hidden overflow-y-auto">
+         <div className="fixed inset-0 top-[140px] md:top-[170px] bg-marfil z-40 md:hidden overflow-y-auto">
           <nav className="flex flex-col p-6 gap-4">
             <Link to="/coleccion/newtri" onClick={() => setMobileMenuOpen(false)} className="text-[15px] font-medium text-azul-profundo py-2 border-b border-gris-claro">NEWTRI</Link>
             <Link to="/coleccion/vintage-contemporaneas" onClick={() => setMobileMenuOpen(false)} className="text-[15px] font-medium text-azul-profundo py-2 border-b border-gris-claro">VINTAGE CONTEMPORANEAS</Link>
