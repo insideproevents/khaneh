@@ -25,11 +25,6 @@ export default function Header() {
     <>
       <header className="w-full h-[70px] bg-marfil border-b border-gris-claro sticky top-0 z-50">
         <div className="max-w-content mx-auto h-full flex items-center justify-between px-4 md:px-8">
-          {/* Left - Welcome */}
-          <div className="hidden md:block">
-            <p className="text-[13px] text-taupe">Bienvenido a nuestra tienda</p>
-          </div>
-
           {/* Mobile menu button */}
           <button
             className="md:hidden p-2 -ml-2"
