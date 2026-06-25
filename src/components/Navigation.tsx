@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { navCollections } from '@/data/collections';
 
 const mainNav = [
+  { label: 'INICIO', href: '/', hasDropdown: false },
   { label: 'TIPOS', href: '#', hasDropdown: true },
   { label: 'TAMANO', href: '#', hasDropdown: true },
   { label: 'COLOR', href: '#', hasDropdown: true },
