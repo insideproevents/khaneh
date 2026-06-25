@@ -3,7 +3,6 @@ import { ChevronUp } from 'lucide-react';
 import TopBar from './TopBar';
 import Header from './Header';
 import Navigation from './Navigation';
-import WelcomeSection from './WelcomeSection';
 import Footer from './Footer';
 import CartDrawer from './CartDrawer';
 
@@ -27,7 +26,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <TopBar />
       <Header />
       <Navigation />
-      <WelcomeSection />
       <main className="flex-1">
         {children}
       </main>
