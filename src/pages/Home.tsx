@@ -353,6 +353,7 @@ function AboutText() {
 export default function Home() {
   return (
     <Layout>
+      <img src="/assets/fondo_hero_khaneh.png" alt="Aguilera Khaneh" className="w-full mx-auto h-auto block" />
       <HeroBanner />
       <ShopBySize />
 
