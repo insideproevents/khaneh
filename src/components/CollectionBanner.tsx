@@ -37,7 +37,7 @@ export default function CollectionBanner({ title, image, subtitle, overlay = tru
           transform: `translateY(${offset}px) scale(${scale})`,
         }}
       />
-      {overlay && <div className="absolute inset-0 bg-black/40" />}
+      {overlay !== false && <div className="absolute inset-0 bg-black/40" />}
       <div className="relative z-10 text-center px-4 py-12">
         <h2 className="font-serif text-[36px] md:text-[52px] font-light text-white tracking-wide drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
           {title}
