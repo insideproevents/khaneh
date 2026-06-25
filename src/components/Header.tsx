@@ -40,9 +40,7 @@ export default function Header() {
 
           {/* Center - Logo */}
           <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-            <h1 className="font-serif text-[22px] md:text-[26px] font-semibold text-azul-profundo tracking-[2px]">
-              AGUILERA KHANEH
-            </h1>
+            <img src="/assets/logo_new.png" alt="Aguilera Khaneh" className="h-[40px] md:h-[50px] w-auto object-contain" />
           </Link>
 
           {/* Right - Icons */}
