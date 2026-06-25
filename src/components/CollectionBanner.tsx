@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface CollectionBannerProps {
   title: string;
@@ -8,25 +8,30 @@ interface CollectionBannerProps {
 
 export default function CollectionBanner({ title, image, subtitle }: CollectionBannerProps) {
   const [offset, setOffset] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      requestAnimationFrame(() => {
-        setOffset(window.scrollY);
-      });
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+      setOffset(progress * 40 - 20);
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="relative w-full min-h-[220px] md:min-h-[280px] flex items-center justify-center overflow-hidden">
+    <div ref={ref} className="relative w-full min-h-[220px] md:min-h-[280px] flex items-center justify-center overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        className="absolute inset-0 w-full h-full object-cover scale-110 will-change-transform"
         style={{
-          transform: `translateY(${offset * 0.35}px)`,
+          transform: `translateY(${offset}px)`,
         }}
       />
       <div className="absolute inset-0 bg-black/40" />
