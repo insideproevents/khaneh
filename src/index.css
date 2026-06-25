@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 24% 93%;
+    --foreground: 210 32% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 32% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 32% 17%;
+    --primary: 210 32% 17%;
+    --primary-foreground: 40 24% 93%;
+    --secondary: 40 24% 93%;
+    --secondary-foreground: 210 32% 17%;
+    --muted: 36 14% 87%;
+    --muted-foreground: 30 8% 49%;
+    --accent: 37 30% 63%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 48% 53%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 14% 87%;
+    --input: 36 14% 87%;
+    --ring: 37 30% 63%;
+    --radius: 0px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-marfil text-azul-profundo font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
