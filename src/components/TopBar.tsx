@@ -12,7 +12,7 @@ export default function TopBar() {
         </a>
       </div>
       <p className="text-white text-announcement uppercase tracking-wider">
-        Hasta 6 Cuotas sin interes — Despacho GRATIS todo Chile continental
+        Hasta 6 Cuotas sin interes — Despacho a todo Chile.
       </p>
       <div className="w-[60px]" />
     </div>
