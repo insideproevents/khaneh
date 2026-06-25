@@ -28,7 +28,10 @@ export default function CollectionBanner({ title, image, subtitle, overlay = tru
   }, []);
 
   return (
-    <div ref={ref} className="relative w-full min-h-[220px] md:min-h-[280px] flex items-center justify-center overflow-hidden">
+    <div
+      ref={ref}
+      className={`relative w-full min-h-[220px] md:min-h-[280px] flex items-center justify-center overflow-hidden ${!overlay && 'no-overlay'}`}
+    >
       <img
         src={image}
         alt={title}
