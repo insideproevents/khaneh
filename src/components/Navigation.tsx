@@ -14,8 +14,15 @@ export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="hidden md:block w-full h-[50px] bg-marfil border-b border-gris-claro relative z-40">
-      <div className="max-w-content mx-auto h-full flex items-center justify-center gap-8 lg:gap-10">
+    <nav className="hidden md:block w-full bg-marfil border-b border-gris-claro relative z-40">
+      <div className="w-full">
+        <img
+          src="/assets/logo_banner_khaneh.png"
+          alt="Khaneh Banner"
+          className="w-full h-auto object-cover"
+        />
+      </div>
+      <div className="max-w-content mx-auto h-[50px] flex items-center justify-center gap-8 lg:gap-10">
         {mainNav.map((item) => (
           <div
             key={item.label}
