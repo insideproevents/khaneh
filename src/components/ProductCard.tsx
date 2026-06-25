@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       const rect = imgRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
-      setOffset(progress * 30 - 15);
+      setOffset(progress * 50 - 25);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

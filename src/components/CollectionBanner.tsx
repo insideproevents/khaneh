@@ -17,8 +17,8 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
       const rect = ref.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
-      setOffset(progress * 60 - 30);
-      setScale(1 + progress * 0.1);
+      setOffset(progress * 100 - 50);
+      setScale(1 + progress * 0.2);
     };
 
     handleScroll();
