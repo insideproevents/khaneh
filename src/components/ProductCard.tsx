@@ -3,6 +3,7 @@ import { Heart, Eye } from 'lucide-react';
 import type { Product } from '@/data/products';
 import { useWishlist } from '@/contexts/WishlistContext';
 import { useCart } from '@/contexts/CartContext';
+import { useState, useEffect, useRef } from 'react';
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +17,22 @@ export default function ProductCard({ product }: ProductCardProps) {
   const discountPercent = hasDiscount
     ? Math.round(((product.oldPrice! - product.price) / product.oldPrice!) * 100)
     : 0;
+  const [offset, setOffset] = useState(0);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!imgRef.current) return;
+      const rect = imgRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+      setOffset(progress * 20 - 10);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="group bg-white">
@@ -23,9 +40,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="relative aspect-[3/4] overflow-hidden bg-gris-claro/30">
         <Link to={`/producto/${product.slug}`}>
           <img
+            ref={imgRef}
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            style={{ transform: `translateY(${offset}px)` }}
             loading="lazy"
           />
         </Link>

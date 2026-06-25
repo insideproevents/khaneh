@@ -8,6 +8,7 @@ interface CollectionBannerProps {
 
 export default function CollectionBanner({ title, image, subtitle }: CollectionBannerProps) {
   const [offset, setOffset] = useState(0);
+  const [scale, setScale] = useState(1.1);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
       const windowHeight = window.innerHeight;
       const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
       setOffset(progress * 40 - 20);
+      setScale(1.05 + progress * 0.05);
     };
 
     handleScroll();
@@ -29,9 +31,9 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
       <img
         src={image}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover scale-110 will-change-transform"
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
         style={{
-          transform: `translateY(${offset}px)`,
+          transform: `translateY(${offset}px) scale(${scale})`,
         }}
       />
       <div className="absolute inset-0 bg-black/40" />
