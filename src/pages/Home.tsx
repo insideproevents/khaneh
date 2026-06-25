@@ -182,11 +182,12 @@ function ShopBySize() {
 }
 
 /* ─── Product Carousel ─── */
-function ProductCarousel({ products: prods, title, bannerImage, collectionSlug }: {
+function ProductCarousel({ products: prods, title, bannerImage, collectionSlug, overlay }: {
   products: typeof products;
   title: string;
   bannerImage: string;
   collectionSlug: string;
+  overlay?: boolean;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { ref, isVisible } = useScrollReveal();
@@ -199,7 +200,7 @@ function ProductCarousel({ products: prods, title, bannerImage, collectionSlug }
 
   return (
     <section ref={ref} className="w-full">
-      <CollectionBanner title={title} image={bannerImage} />
+      <CollectionBanner title={title} image={bannerImage} overlay={overlay} />
       <div className={`max-w-content mx-auto px-4 md:px-8 py-10 transition-all duration-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
         <div className="relative">
           <div
@@ -367,6 +368,7 @@ export default function Home() {
             bannerImage={col.banner}
             products={colProducts}
             collectionSlug={col.slug}
+            overlay={col.overlay}
           />
         );
       })}

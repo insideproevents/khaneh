@@ -24,6 +24,7 @@ export default function Coleccion() {
   const collection = collections.find(c => c.slug === slug);
   const collectionName = collection?.name || slug?.replace(/-/g, ' ').toUpperCase() || 'COLECCION';
   const bannerImage = collection?.banner || '/assets/hero-banner-1.jpg';
+  const showOverlay = collection?.overlay ?? true;
 
   // Get products
   const products = useMemo(() => {
@@ -73,7 +74,7 @@ export default function Coleccion() {
 
   return (
     <Layout>
-      <CollectionBanner title={collectionName} image={bannerImage} />
+      <CollectionBanner title={collectionName} image={bannerImage} overlay={showOverlay} />
 
       {/* Breadcrumbs */}
       <div className="max-w-content mx-auto px-4 md:px-8 py-4">

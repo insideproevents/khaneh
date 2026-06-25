@@ -2,6 +2,7 @@ export interface Collection {
   slug: string;
   name: string;
   banner: string;
+  overlay?: boolean;
 }
 
 export const collections: Collection[] = [
@@ -9,11 +10,11 @@ export const collections: Collection[] = [
   { slug: 'vintage-contemporaneas', name: 'VINTAGE CONTEMPORÁNEAS', banner: '/assets/banner-vintage-contemporaneas.jpg' },
   { slug: 'vintage-originales', name: 'VINTAGE ORIGINALES', banner: '/assets/banner-vintage-originales.jpg' },
   { slug: 'lavables', name: 'LAVABLES', banner: '/assets/banner-lavables.jpg' },
-  { slug: 'hygge', name: 'HYGGE', banner: '/assets/banner-hygge.jpg' },
+  { slug: 'hygge', name: 'HYGGE', banner: '/assets/banner-hygge.jpg', overlay: false },
   { slug: 'sisal', name: 'SISAL Y FIBRAS NATURALES', banner: '/assets/banner-sisal.jpg' },
   { slug: 'neutras', name: 'NEUTRAS Y NATURALES', banner: '/assets/banner-neutras.jpg' },
   { slug: 'blanco-negro', name: 'BLANCO Y NEGRO', banner: '/assets/banner-blanco-negro.jpg' },
-  { slug: 'patchworks', name: 'PATCHWORKS', banner: '/assets/banner-patchworks.jpg' },
+  { slug: 'patchworks', name: 'PATCHWORKS', banner: '/assets/banner-patchworks.jpg', overlay: false },
 ];
 
 export const navCollections = [

@@ -4,9 +4,10 @@ interface CollectionBannerProps {
   title: string;
   image: string;
   subtitle?: string;
+  overlay?: boolean;
 }
 
-export default function CollectionBanner({ title, image, subtitle }: CollectionBannerProps) {
+export default function CollectionBanner({ title, image, subtitle, overlay = true }: CollectionBannerProps) {
   const [offset, setOffset] = useState(0);
   const [scale, setScale] = useState(1.1);
   const ref = useRef<HTMLDivElement>(null);
@@ -36,13 +37,13 @@ export default function CollectionBanner({ title, image, subtitle }: CollectionB
           transform: `translateY(${offset}px) scale(${scale})`,
         }}
       />
-      <div className="absolute inset-0 bg-black/40" />
+      {overlay && <div className="absolute inset-0 bg-black/40" />}
       <div className="relative z-10 text-center px-4 py-12">
-        <h2 className="font-serif text-[36px] md:text-[52px] font-light text-white tracking-wide">
+        <h2 className="font-serif text-[36px] md:text-[52px] font-light text-white tracking-wide drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
           {title}
         </h2>
         {subtitle && (
-          <p className="text-[14px] md:text-[16px] text-white/80 mt-2 font-sans">
+          <p className="text-[14px] md:text-[16px] text-white/90 mt-2 font-sans drop-shadow" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
             {subtitle}
           </p>
         )}
